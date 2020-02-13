@@ -1,3 +1,11 @@
+#' Make Flipbook UI
+#'
+#' @param id
+#'
+#' @return
+#' @export
+#'
+#' @examples
 makeFlipbook_UI <- function(id) {
   ns <- shiny::NS(id)
   shiny::tagList(
@@ -17,6 +25,17 @@ makeFlipbook_UI <- function(id) {
   )
 }
 
+#' Make a Flipbook in a shiny app
+#'
+#' @param input
+#' @param output
+#' @param session
+#' @param myplot a ggplot wrapped in `rlang::quo`
+#'
+#' @return
+#' @export
+#'
+#' @examples
 makeFlipbook <- function(input, output, session, myplot) {
 
   p2 <-
