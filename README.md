@@ -5,7 +5,7 @@ an adaptation of [`flipbookr`](https://github.com/EvaMaeRey/flipbookr) from [@Ev
 ## how to install 
 
 ```
-remotes::install_github("whtns/shinflipbookr")
+remotes::install_github("whtns/shinyflipbookr")
 ```
 
 run `shinyflipbookr()` for an example app
