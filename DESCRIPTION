@@ -1,11 +1,10 @@
 Package: shinyflipbookr
 Type: Package
-Title: An experiment with ggplot2 flipbooks in shiny apps
+Title: ggplot2 flipbooks in shiny
 Version: 0.1.0
 Author: Kevin Stachelek
 Maintainer: Kevin Stachelek <kstachelek@protonmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: An experiment with ggplot2 flipbooks in shiny apps
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -20,3 +19,7 @@ Remotes:
 Depends: 
     shiny,
     ggplot2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

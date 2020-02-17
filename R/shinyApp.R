@@ -40,15 +40,6 @@ shinyflipbookr <- function(appTitle = "shinyflipbookr example") {
 
   server <- function(input, output) {
 
-    # p_first <- gapminder %>%
-    #   ggplot(aes(gdpPercap, lifeExp, size = pop,
-    #              color = continent)) +
-    #   geom_point() +
-    #   scale_x_log10() +
-    #   NULL
-    #
-    # p1 <- ggreverse::convert_to_code(p_first)
-
     p1 <- rlang::quo(
       gapminder::gapminder %>%
         dplyr::filter(year == 2007) %>%
@@ -75,6 +66,26 @@ shinyflipbookr <- function(appTitle = "shinyflipbookr example") {
     })
 
     shiny::callModule(makeFlipbook, "test", p1)
+
+    # with ggreverse ------------------------------
+    # p1 <- gapminder::gapminder %>%
+    #   ggplot2::ggplot() +
+    #   ggplot2::aes(x = gdpPercap) +
+    #   ggplot2::aes(y = lifeExp) +
+    #   ggplot2::aes(size = pop) +
+    #   ggplot2::aes(color = continent) +
+    #   ggplot2::geom_point() +
+    #   NULL
+    #
+    # p_reverse <- ggreverse::convert_to_code(p1)
+    #
+    # output$plot1 <- shiny::renderPlot({
+    #   p1
+    # })
+    #
+    # shiny::callModule(makeFlipbook, "test", p_reverse)
+    # ------------------------------
+
 
   }
 
