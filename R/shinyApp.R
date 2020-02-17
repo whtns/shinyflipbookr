@@ -65,7 +65,7 @@ shinyflipbookr <- function(appTitle = "shinyflipbookr example") {
         ggplot2::labs(x = "Per capita GDP") +
         ggplot2::labs(y = "Life expectancy") +
         ggplot2::labs(caption = "Vis: Gina Reynolds for 'Tidyverse in Action'") +
-        theme_minimal()
+        ggplot2::theme_minimal()
     )
 
     p <- rlang::eval_tidy(p1)
