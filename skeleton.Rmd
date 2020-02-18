@@ -1,0 +1,20 @@
+---
+title: test
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, hygge, ninjutsu]
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include = F}
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = FALSE, fig.retina = 3)
+library(flipbookr)
+library(tidyverse)
+```

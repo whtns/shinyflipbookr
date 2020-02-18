@@ -1,0 +1,43 @@
+---
+title: "The fragile and perilous art of flipbooking"
+subtitle: "With flipbookr and xaringan"
+author: "Gina Reynolds, December 2019"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, hygge, ninjutsu]
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup}
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = FALSE, fig.retina = 3)
+
+library(flipbookr)
+library(tidyverse)
+```
+
+At first we'll apply our flipbooking to the below input code - the code chunk is named "cars".  For now I set echo = TRUE for this code chunk, so you can see the code content but sometimes you might like to set echo to FALSE. This code uses tidyverse tools, so we loaded that too in the "setup" code chunk at the beginning of the template. 
+
+```{r cars, include = FALSE}
+cars %>%
+  filter(speed > 4) %>%
+  ggplot() +
+  aes(x = speed) +
+  aes(y = dist) + #BREAK
+  geom_point(
+    alpha = .3, #BREAK2
+    color = "blue" #BREAK3
+    ) + #BREAK
+  aes(size = speed) #BREAK
+```
+
+---
+
+`r chunk_reveal("cars", break_type = "auto")`
+
+---

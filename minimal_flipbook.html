@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The fragile and perilous art of flipbooking</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gina Reynolds, December 2019" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The fragile and perilous art of flipbooking
+## With flipbookr and xaringan
+### Gina Reynolds, December 2019
+
+---
+
+
+
+
+```r
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = FALSE, fig.retina = 3)
+
+library(flipbookr)
+library(tidyverse)
+```
+
+```
+## ── Attaching packages ─────────────────────────────────── tidyverse 1.3.0 ──
+```
+
+```
+## ✓ ggplot2 3.2.1            ✓ purrr   0.3.3       
+## ✓ tibble  2.99.99.9014     ✓ dplyr   0.8.99.9000 
+## ✓ tidyr   1.0.2            ✓ stringr 1.4.0       
+## ✓ readr   1.3.1            ✓ forcats 0.4.0
+```
+
+```
+## ── Conflicts ────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+```
+
+At first we'll apply our flipbooking to the below input code - the code chunk is named "cars".  For now I set echo = TRUE for this code chunk, so you can see the code content but sometimes you might like to set echo to FALSE. This code uses tidyverse tools, so we loaded that too in the "setup" code chunk at the beginning of the template. 
+
+
+
+---
+
+class: split-40
+count: false
+.column[.content[
+
+```r
+*cars
+```
+]]
+.column[.content[
+
+```
+   speed dist
+1      4    2
+2      4   10
+3      7    4
+4      7   22
+5      8   16
+6      9   10
+7     10   18
+8     10   26
+9     10   34
+10    11   17
+11    11   28
+12    12   14
+13    12   20
+14    12   24
+15    12   28
+16    13   26
+17    13   34
+18    13   34
+19    13   46
+20    14   26
+21    14   36
+22    14   60
+23    14   80
+24    15   20
+25    15   26
+26    15   54
+27    16   32
+28    16   40
+29    17   32
+30    17   40
+31    17   50
+32    18   42
+33    18   56
+34    18   76
+35    18   84
+36    19   36
+37    19   46
+38    19   68
+39    20   32
+40    20   48
+41    20   52
+42    20   56
+43    20   64
+44    22   66
+45    23   54
+46    24   70
+47    24   92
+48    24   93
+49    24  120
+50    25   85
+```
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+cars %&gt;%  
+* filter(speed &gt; 4)
+```
+]]
+.column[.content[
+
+```
+   speed dist
+1      7    4
+2      7   22
+3      8   16
+4      9   10
+5     10   18
+6     10   26
+7     10   34
+8     11   17
+9     11   28
+10    12   14
+11    12   20
+12    12   24
+13    12   28
+14    13   26
+15    13   34
+16    13   34
+17    13   46
+18    14   26
+19    14   36
+20    14   60
+21    14   80
+22    15   20
+23    15   26
+24    15   54
+25    16   32
+26    16   40
+27    17   32
+28    17   40
+29    17   50
+30    18   42
+31    18   56
+32    18   76
+33    18   84
+34    19   36
+35    19   46
+36    19   68
+37    20   32
+38    20   48
+39    20   52
+40    20   56
+41    20   64
+42    22   66
+43    23   54
+44    24   70
+45    24   92
+46    24   93
+47    24  120
+48    25   85
+```
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+cars %&gt;%  
+  filter(speed &gt; 4) %&gt;%  
+* ggplot()
+```
+]]
+.column[.content[
+&lt;img src="minimal_flipbook_files/figure-html/cars_auto_3_output-1.png" width="432" /&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+cars %&gt;%  
+  filter(speed &gt; 4) %&gt;%  
+  ggplot() +  
+* aes(x = speed)
+```
+]]
+.column[.content[
+&lt;img src="minimal_flipbook_files/figure-html/cars_auto_4_output-1.png" width="432" /&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+cars %&gt;%  
+  filter(speed &gt; 4) %&gt;%  
+  ggplot() +  
+  aes(x = speed) +  
+* aes(y = dist)
+```
+]]
+.column[.content[
+&lt;img src="minimal_flipbook_files/figure-html/cars_auto_5_output-1.png" width="432" /&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+cars %&gt;%  
+  filter(speed &gt; 4) %&gt;%  
+  ggplot() +  
+  aes(x = speed) +  
+  aes(y = dist) +  
+* geom_point(
+*   alpha = .3,
+*   color = "blue"
+*   )
+```
+]]
+.column[.content[
+&lt;img src="minimal_flipbook_files/figure-html/cars_auto_6_output-1.png" width="432" /&gt;
+]]
+---
+class: split-40
+count: false
+.column[.content[
+
+```r
+cars %&gt;%  
+  filter(speed &gt; 4) %&gt;%  
+  ggplot() +  
+  aes(x = speed) +  
+  aes(y = dist) +  
+  geom_point(  
+    alpha = .3,  
+    color = "blue"  
+    ) +  
+* aes(size = speed)
+```
+]]
+.column[.content[
+&lt;img src="minimal_flipbook_files/figure-html/cars_auto_7_output-1.png" width="432" /&gt;
+]]
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:10",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

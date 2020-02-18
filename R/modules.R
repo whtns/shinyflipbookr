@@ -21,6 +21,9 @@ makeFlipbook_UI <- function(id) {
         shiny::tags$style(type="text/css", "#code {white-space: pre-wrap;}"),
         width = 6
       )
+    ),
+    shiny::fluidRow(
+      shiny::includeHTML(ns("test.html"))
     )
   )
 }
@@ -60,6 +63,13 @@ makeFlipbook <- function(input, output, session, myplot) {
 
   output$code <- renderText({
     paste0(p2[[input$n]], "\n")
+  })
+
+  output$frame <- renderUI({
+    # my_test <- shiny::tags$iframe(src=shiny::includeHTML("test.html"), height=600, width=535)
+    my_test <- shiny::includeHTML("test.html")
+    # print(my_test)
+    my_test
   })
 
 }

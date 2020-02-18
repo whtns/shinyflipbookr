@@ -1,0 +1,33 @@
+---
+title: test
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, hygge, ninjutsu]
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include = F}
+knitr::opts_chunk$set(fig.width = 6, message = FALSE, warning = FALSE, comment = "", cache = FALSE, fig.retina = 3)
+library(flipbookr)
+library(tidyverse)
+```
+```{r test, include = FALSE}
+gapminder::gapminder %>% dplyr::filter(year == 2007) %>% ggplot2::ggplot() + 
+    ggplot2::aes(x = gdpPercap) + ggplot2::aes(y = lifeExp) + 
+    ggplot2::geom_point(alpha = 0.6) + ggplot2::aes(color = continent) + 
+    ggplot2::aes(size = pop/1e+06) + ggplot2::labs(title = "Per capita GDP versus life expectency in 2007") + 
+    ggplot2::labs(subtitle = "Data Source: Gapminder package in R") + 
+    ggplot2::labs(size = "Population (millions)") + ggplot2::labs(col = "") + 
+    ggplot2::labs(x = "Per capita GDP") + ggplot2::labs(y = "Life expectancy") + 
+    ggplot2::labs(caption = "Vis: Gina Reynolds for 'Tidyverse in Action'") + 
+    ggplot2::theme_minimal()
+```
+---
+`r chunk_reveal("test", break_type = "auto")`

@@ -20,7 +20,7 @@ shinyflipbookr <- function(appTitle = "shinyflipbookr example") {
   ui <- shiny::fluidPage(
 
     # Application title
-    shiny::titlePanel(appTitle),
+    shiny::titlePanel("appTitle"),
 
     shiny::sidebarLayout(
 
