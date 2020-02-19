@@ -12,7 +12,8 @@ Imports:
     gganimate,
     flipbookr,
     ggreverse (>= 0.1.1),
-    magrittr
+    magrittr,
+    gapminder
 RoxygenNote: 7.0.2
 Remotes: 
     coolbutuseless/ggreverse
