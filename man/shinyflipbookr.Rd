@@ -2,7 +2,7 @@
 % Please edit documentation in R/shinyApp.R
 \name{shinyflipbookr}
 \alias{shinyflipbookr}
-\title{Create a Shiny Flipbookr}
+\title{Create a Shiny Flipbook}
 \usage{
 shinyflipbookr(appTitle = "shinyflipbookr example")
 }
@@ -13,5 +13,5 @@ shinyflipbookr(appTitle = "shinyflipbookr example")
 
 }
 \description{
-Create a Shiny Flipbookr
+Create a Shiny Flipbook
 }

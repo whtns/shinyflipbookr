@@ -1,13 +1,5 @@
-# library(gapminder)
-# library(ggplot2)
-# library(shiny)
-# library(gganimate)
-# library(rlang)
-# library(magrittr)
-#
-# theme_set(theme_bw())
 
-#' Create a Shiny Flipbookr
+#' Create a Shiny Flipbook
 #'
 #' @param appTitle The title to be displayed
 #'
